@@ -99,8 +99,8 @@
         gifs.css("backgroundImage", 'url("https://media.giphy.com/media/26xBKbWoZWqbWbrlm/giphy.gif")');
         teamoneGoals.html("WINS with 5 Goals!");
         teamtwoGoals.html("LOSER!!!!");
-        teamoneShoot.off('click');
-        teamtwoShoot.off('click');
+        teamoneShoot.attr('disabled', true); 
+        teamtwoShoot.attr('disabled', true); 
       }
 
     })
@@ -131,8 +131,8 @@
         gifs.css("backgroundImage", 'url("https://media.giphy.com/media/xUA7b2aspOf28pPDTq/giphy.gif")');
         teamoneGoals.html("LOSER!!!!");
         teamtwoGoals.html("WINS with 5 Goals!");
-        teamoneShoot.off('click');
-        teamtwoShoot.off('click');
+        teamoneShoot.attr('disabled', true); 
+        teamtwoShoot.attr('disabled', true); 
       }
 
     })
@@ -151,70 +151,9 @@
       resets.css("background-color", "white");
       resets.css("color", "black");
       fanfare.play();
-      teamoneShoot.click(function () {
-
-        teamoneNumShots.html(parseInt(teamoneNumShots.html()) + 1);
-        if (getRandom() > 0.5) {
-          teamoneGoals.html(parseInt(teamoneGoals.html()) + 1);
-          left.css("background-color", "red");
-          body.css("backgroundImage", 'url("https://upload.wikimedia.org/wikipedia/en/thumb/5/5d/Columbus_Blue_Jackets_logo.svg/238px-Columbus_Blue_Jackets_logo.svg.png")');
-          gifs.css("backgroundImage", 'url("https://media.giphy.com/media/3o84TPzhfmcoQgVoNa/giphy.gif")');
-          resets.css("background-color", "black");
-          resets.css("color", "white");
-          cheer.play();
-
-        } else {
-          body.css("background-color", "white");
-          body.css("backgroundImage", "none")
-          gifs.css("backgroundImage", 'url("https://media.giphy.com/media/5qThrC6JttNHa/giphy.gif")');
-          left.css("background-color", "white");
-          right.css("background-color", "white");
-          resets.css("background-color", "white");
-          resets.css("color", "black");
-          aww.play();
-        }
-
-        if (teamoneGoals.html() >= 5) {
-          champions.play();
-          gifs.css("backgroundImage", 'url("https://media.giphy.com/media/26xBKbWoZWqbWbrlm/giphy.gif")');
-          teamoneGoals.html("WINS with 5 Goals!");
-          teamtwoGoals.html("LOSER!!!!");
-          teamoneShoot.off('click');
-          teamtwoShoot.off('click');
-        }
-
-      })
-      teamtwoShoot.click(function () {
-        teamtwoNumShots.html(parseInt(teamtwoNumShots.html()) + 1);
-        if (getRandom() > 0.5) {
-          teamtwoGoals.html(parseInt(teamtwoGoals.html()) + 1);
-          right.css("background-color", "yellow");
-          body.css("backgroundImage", 'url("https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/Pittsburgh_Penguins_logo_%282016%29.svg/131px-Pittsburgh_Penguins_logo_%282016%29.svg.png")');
-          gifs.css("backgroundImage", 'url("https://media.giphy.com/media/xUA7bhZz9UJULaTYeA/giphy.gif")');
-          resets.css("background-color", "black");
-          resets.css("color", "white");
-          cheer.play();
-        } else {
-          body.css("background-color", "white");
-          body.css("backgroundImage", "none")
-          gifs.css("backgroundImage", 'url("https://media.giphy.com/media/5qThrC6JttNHa/giphy.gif")');
-          right.css("background-color", "white");
-          left.css("background-color", "white");
-          resets.css("background-color", "white");
-          resets.css("color", "black");
-          aww.play();
-        }
-
-        if (teamtwoGoals.html() >= 5) {
-          champions.play();
-          gifs.css("backgroundImage", 'url("https://media.giphy.com/media/xUA7b2aspOf28pPDTq/giphy.gif")');
-          teamoneGoals.html("LOSER!!!!");
-          teamtwoGoals.html("WINS with 5 Goals!");
-          teamoneShoot.off('click');
-          teamtwoShoot.off('click');
-        }
-
-      })
+      teamoneShoot.attr('disabled', false); 
+      teamtwoShoot.attr('disabled', false); 
+     
     })
 
   })
