@@ -29,14 +29,23 @@
  *
  */
 
- (function(){
+(function () {
 
-   //jQuery equivelent to window.onload = function{}
-   //code in here wont run until page loads
-   $(function(){
+  //jQuery equivelent to window.onload = function{}
+  //code in here wont run until page loads
+  $(function () {
 
+    const top = $("#top");
 
+    top.click(function () {
+      if (top.css("color" === "black")) {
+        top.css("color", "red")
+      } else {
+        top.css("color", "black");
+      }
 
-   })
+    })
 
- })();
+  })
+
+})();
